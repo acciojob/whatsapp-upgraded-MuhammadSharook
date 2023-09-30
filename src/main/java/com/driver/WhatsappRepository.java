@@ -98,7 +98,7 @@ public class WhatsappRepository {
 
     public String changeAdmin(User approver, User user, Group group) {
         if(!group_db.containsKey(group))throw new RuntimeException("Group does not exist");
-        else if (!admin_db.containsKey(approver)) {
+        else if (!admin_db.get(group).equals(approver)) {
             throw new RuntimeException("Approver does not have rights");
         } else if (!group_db.get(group).contains(user)) {
             throw new RuntimeException("User is not a participant");
