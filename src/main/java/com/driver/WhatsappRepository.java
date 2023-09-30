@@ -53,7 +53,7 @@ public class WhatsappRepository {
         else {
             Group_Count++;
             Group group = new Group();
-            group.setName("Group" + Group_Count);
+            group.setName("Group "+Group_Count);
             group.setNumberOfParticipants(users.size());
 
             group_db.put(group,users);
